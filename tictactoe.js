@@ -151,7 +151,7 @@ function Tictactoe (params) {
                     var cells = parent.featuredCells.get(directions[i], item, parent.combinationNum);
 
                     // Выполняем проверку на наличие комбинации, которую сгенерировали и если проверка оказалась успешной...
-                    if (parent.checkCombination(cells, player))
+                    if (parent.checkCombination(cells, player)) {
                         i = directions.length;  // Останавливаем цикл
                         cells[ item.id ] = true;    // Добавляем стартовую ячейку к объекту с перспективными ячейками
                         parent.win(cells, player);  // Объявляем победу
@@ -303,7 +303,7 @@ var TictactoeGame = new Tictactoe({
     bot: true   // Бот вкл/выкл.
 });
 
-// Эта ф-ция нужна для работы переменных parent, которые я выше много раз описывал зачем нужны 
+// Эта ф-ция нужна для работы переменных parent, которые я выше много раз описывал зачем нужны
 var TictatoeClickHelper = function () {
     return TictactoeGame; // TictactoeGame – is must be name of variable with game
 };
